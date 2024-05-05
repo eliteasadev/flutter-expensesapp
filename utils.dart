@@ -28,6 +28,7 @@ bool isValidName(String nombre) {
   return nombre.length > 3 && RegExp(r'^[a-zA-Z]+$').hasMatch(nombre);
 }
 
+// Inicia sesión en firebase 
 Future<bool> firebaseLoggin(String emailAddress, String password) async {
   try {
     UserCredential userCredential = await FirebaseAuth.instance
@@ -38,6 +39,7 @@ Future<bool> firebaseLoggin(String emailAddress, String password) async {
   return true;
 }
 
+// Crea un usuario nuevo en la base de datos de firebase
 Future<bool> firebaseSignIn(String emailAddress, String password) async {
   try {
     final credential =

@@ -92,7 +92,6 @@ class _YearPageState extends State<YearPage> {
 
   @override
   void dispose() {
-    // Clean up the controller when the widget is disposed.
     _controller.dispose();
     super.dispose();
   }

@@ -207,7 +207,6 @@ class _AddPageState extends State<AddPage> {
           if (value > 0 && category.isNotEmpty) {
             FirebaseFirestore.instance
                 .collection("users")
-                // .doc(user.uid)
                 .doc(user)
                 .collection("expenses")
                 .add({

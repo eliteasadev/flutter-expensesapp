@@ -25,11 +25,6 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
 
-    // _query = FirebaseFirestore.instance
-    //     .collection('expenses')
-    //     .where("month", isEqualTo: currentPage + 1)
-    //     .snapshots();
-
     _pageController = PageController(
       initialPage: currentPage,
       viewportFraction: 0.35,
@@ -53,7 +48,6 @@ class _HomePageState extends State<HomePage> {
         var user = Provider.of<LoginState>(context, listen: false).currentUser;
         _query = FirebaseFirestore.instance
             .collection("users")
-            // .doc(user.uid)
             .doc(user)
             .collection('expenses')
             .where("month", isEqualTo: currentPage + 1)

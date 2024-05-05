@@ -29,7 +29,6 @@ class _DetailsPageState extends State<DetailsPage> {
       var user = Provider.of<LoginState>(context, listen: false).currentUser;
       _query = FirebaseFirestore.instance
           .collection("users")
-          // .doc(user.uid)
           .doc(user)
           .collection('expenses')
           .where("month", isEqualTo: widget.params.month + 1)
@@ -53,7 +52,6 @@ class _DetailsPageState extends State<DetailsPage> {
                         onDismissed: (direction) {
                           FirebaseFirestore.instance
                               .collection("users")
-                              // .doc(user.uid)
                               .doc(user)
                               .collection('expenses')
                               .doc(document.id)
